@@ -38,6 +38,18 @@ def find_pet_by_name(pet_shop, pet_name)
    for pet in pet_shop[:pets]
      if pet_name == pet[:name]
         return pet
-        end
+     end
     end  
+    return nil
+end
+
+def remove_pet_by_name(pet_shop, pet_name)
+    for pets in pet_shop[:pets] do
+        pets.delete_if{pets[:name] == pet_name}
+    end
+end
+
+def add_pet_to_stock(pet_shop, new_pet)
+    new_pet = 1
+    return pet_shop[:pets].count() += new_pet
 end
