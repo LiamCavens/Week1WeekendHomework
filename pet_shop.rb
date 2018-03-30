@@ -50,7 +50,7 @@ def remove_pet_by_name(pet_shop, pet_name)
 end
 
 def add_pet_to_stock(pet_shop, new_pet)
-    return new_pet_stock = pet_shop[:pets] << new_pet
+    pet_shop[:pets] << new_pet
 end
 
 def customer_pet_count(customer)
@@ -58,5 +58,13 @@ def customer_pet_count(customer)
 end
 
 def add_pet_to_customer(customer, new_pet)
-    return new_customer_pet = customer[:pets] << new_pet
+    customer[:pets] << new_pet
 end
+
+def customer_can_afford_pet(customer, new_pet)
+    if customer[:cash] < new_pet[:price]
+        return false
+    end
+else true
+end
+
